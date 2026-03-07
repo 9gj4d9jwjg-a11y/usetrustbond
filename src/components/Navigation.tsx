@@ -49,11 +49,18 @@ const Navigation = () => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className={`font-serif text-lg tracking-widest transition-colors ${
-              isScrolled ? 'text-[#1F1F1F]' : 'text-white'
-            }`}
+            className="flex items-center gap-3"
           >
-            ENKOJI
+            <div className={`w-8 h-8 rounded-full border flex items-center justify-center backdrop-blur-sm transition-colors ${
+              isScrolled ? 'border-[#1F1F1F]/20 bg-[#1F1F1F]/5' : 'border-white/40 bg-white/10'
+            }`}>
+              <span className={isScrolled ? 'text-[#1F1F1F] text-sm' : 'text-white text-sm'}>円</span>
+            </div>
+            <span className={`font-serif text-lg tracking-widest transition-colors ${
+              isScrolled ? 'text-[#1F1F1F]' : 'text-white'
+            }`}>
+              ENKOJI
+            </span>
           </a>
 
           {/* Desktop Nav */}

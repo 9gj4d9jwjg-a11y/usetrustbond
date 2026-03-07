@@ -96,7 +96,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
         ref={bgRef}
         className="absolute inset-0 w-full h-full"
         style={{
-          backgroundImage: 'url(/images/enkoji/hero_temple.jpg)',
+          backgroundImage: 'url(/images/enkoji/hero_temple_new.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: '50% 60%',
         }}
@@ -110,14 +110,6 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
         ref={contentRef}
         className="absolute inset-0 flex flex-col items-center justify-center px-6"
       >
-        <div className="absolute top-[4vh] left-[4vw] flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center bg-white/10 backdrop-blur-sm">
-            <span className="text-white text-xl">円</span>
-          </div>
-          <span className="font-serif text-lg tracking-widest text-white/90">
-            ENKOJI
-          </span>
-        </div>
 
         {/* Center Content */}
         <div className="text-center max-w-3xl">
