@@ -50,16 +50,21 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
       ref={sectionRef}
       className={`relative min-h-screen bg-[#1F1F1F] flex items-center justify-center py-24 ${className}`}
     >
-      {/* Background Image */}
-      <div
-        ref={bgRef}
-        className="absolute inset-0 w-full h-full opacity-60"
-        style={{
-          backgroundImage: 'url(/closing_sunset.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
+      {/* Background Images Grid */}
+      <div className="absolute inset-0 w-full h-full grid grid-cols-1 md:grid-cols-3 opacity-40">
+        <div 
+          className="h-full w-full bg-cover bg-center border-r border-white/5"
+          style={{ backgroundImage: 'url(/images/enkoji/closing_vibe_1.jpg)' }}
+        />
+        <div 
+          className="h-full w-full bg-cover bg-center border-r border-white/5"
+          style={{ backgroundImage: 'url(/images/enkoji/closing_vibe_2.png)' }}
+        />
+        <div 
+          className="h-full w-full bg-cover bg-center"
+          style={{ backgroundImage: 'url(/images/enkoji/closing_vibe_3.jpg)' }}
+        />
+      </div>
 
       {/* Vignette Overlay */}
       <div className="vignette" />
