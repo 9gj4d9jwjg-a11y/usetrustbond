@@ -57,12 +57,6 @@ const LeaderSection = () => {
         className="w-full lg:w-[45%] p-12 lg:p-24 flex flex-col justify-center"
       >
         <div className="mb-12">
-          <img 
-            src="/images/enkoji/logo_enkoji_brush.png" 
-            alt="Logo Enkoji" 
-            className="h-16 w-auto mb-8 opacity-80"
-            onError={(e) => (e.currentTarget.style.display = 'none')}
-          />
           <h2 className="text-3xl lg:text-4xl font-serif text-[#1F1F1F] leading-tight mb-8">
             direção pautada em <br />
             <span className="italic">clareza e simplicidade.</span>
