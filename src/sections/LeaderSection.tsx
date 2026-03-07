@@ -85,8 +85,8 @@ const LeaderSection = () => {
         className="w-full lg:w-[55%] relative min-h-[50vh] lg:min-h-0"
       >
         <img 
-          src="/images/enkoji/monk_koho_slide.png" 
-          alt="Monge Koho no Templo Enkoji"
+          src="/images/enkoji/monk_handpan.jpg" 
+          alt="Monge Koho tocando handpan no Templo Enkoji"
           className="absolute inset-0 w-full h-full object-cover"
         />
       </div>

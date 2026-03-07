@@ -14,7 +14,7 @@ const ExperienceSection = () => {
       title: "Cultura",
       subtitle: "Pintar ao ar livre para transformar paisagem em expressão.",
       desc: 'Pintura ao vivo no templo "plein air", transformando paisagem em expressão. Interação direta entre artista e ambiente.',
-      image: "/images/enkoji/painting_slide.png",
+      image: "/images/enkoji/children_painting.jpg",
       tag: "CULTURA"
     },
     {
