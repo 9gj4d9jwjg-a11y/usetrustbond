@@ -139,22 +139,22 @@ const TransparencySection = ({ className = '' }: TransparencySectionProps) => {
                   <div
                     key={index}
                     ref={(el) => { stepsRef.current[index] = el; }}
-                    className="flex items-start gap-8 lg:gap-12 pl-12 lg:pl-20 relative"
+                    className="flex items-start gap-10 lg:gap-16 pl-16 lg:pl-28 relative"
                   >
-                    {/* Icon */}
+                    {/* Icon Container */}
                     <div
                       ref={(el) => { iconsRef.current[index] = el; }}
-                      className="absolute left-[3rem] lg:left-[4rem] -translate-x-1/2 w-10 h-10 rounded-full bg-[#F6F5F0] border-2 border-[rgba(31,31,31,0.15)] flex items-center justify-center z-10"
+                      className="absolute left-[3rem] lg:left-[4rem] -translate-x-1/2 w-12 h-12 rounded-full bg-[#F6F5F0] border-2 border-[rgba(31,31,31,0.15)] flex items-center justify-center z-10"
                     >
-                      <Icon size={18} className="text-[#4A5D23]" strokeWidth={1.5} />
+                      <Icon size={20} className="text-[#4A5D23]" strokeWidth={1.5} />
                     </div>
 
                     {/* Content */}
-                    <div>
-                      <h3 className="text-xl lg:text-2xl font-serif text-[#1F1F1F] mb-2">
+                    <div className="pt-1">
+                      <h3 className="text-xl lg:text-2xl font-serif text-[#1F1F1F] mb-3">
                         {step.title}
                       </h3>
-                      <p className="text-[#6E6E6E] leading-relaxed">
+                      <p className="text-[#6E6E6E] leading-relaxed text-lg">
                         {step.desc}
                       </p>
                     </div>
