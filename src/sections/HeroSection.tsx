@@ -116,7 +116,8 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           {/* Headline */}
           <h1
             ref={headlineRef}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-serif uppercase tracking-[0.02em] mb-6 drop-shadow-lg"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-serif uppercase tracking-[0.02em] mb-6"
+            style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}
           >
             <span className="word inline-block">Horta</span>{' '}
             <span className="word inline-block">e</span>{' '}
@@ -127,7 +128,8 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           {/* Subheadline */}
           <p
             ref={subheadRef}
-            className="text-lg md:text-xl text-white/95 font-light tracking-wide max-w-2xl mx-auto mb-8 drop-shadow-md"
+            className="text-lg md:text-xl text-white font-light tracking-wide max-w-2xl mx-auto mb-8"
+            style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}
           >
             Transforme sementes em esperança. Ajude a Enkoji a educar e alimentar através do contato com a natureza.
           </p>
@@ -154,9 +156,10 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
         <div
           ref={scrollCueRef}
           className="absolute bottom-[4vh] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}
         >
-          <span className="text-xs text-white/70 tracking-wide">Role para explorar</span>
-          <ChevronDown size={20} className="text-white/70 animate-bounce" />
+          <span className="text-xs text-white tracking-wide">Role para explorar</span>
+          <ChevronDown size={20} className="text-white animate-bounce" />
         </div>
       </div>
     </section>
