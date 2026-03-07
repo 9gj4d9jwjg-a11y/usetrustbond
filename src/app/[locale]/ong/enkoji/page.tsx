@@ -1,5 +1,10 @@
-import OriginalOngTemplate from '@/components/OriginalOngTemplate';
+import { redirect } from 'next/navigation';
 
-export default function EnkojiPage() {
-  return <OriginalOngTemplate />;
+export default async function EnkojiPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  redirect(`/${locale}/ong/enkoji/horta-e-arvores`);
 }

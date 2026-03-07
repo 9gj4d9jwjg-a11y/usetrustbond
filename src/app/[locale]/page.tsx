@@ -6,5 +6,5 @@ export default async function HomePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  redirect(`/${locale}/ong/enkoji`);
+  redirect(`/${locale}/ong/enkoji/horta-e-arvores`);
 }
