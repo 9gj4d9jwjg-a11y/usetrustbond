@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useLayoutEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronDown, Lock } from 'lucide-react';
@@ -78,12 +78,6 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
-
-  // Simple entrance animations already handled in useEffect above
-  // Removing scroll-driven pinning and exit animations for stability
-  useLayoutEffect(() => {
-    // No-op for scrub/pin
   }, []);
 
   return (
