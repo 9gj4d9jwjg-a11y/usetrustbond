@@ -96,7 +96,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
         ref={bgRef}
         className="absolute inset-0 w-full h-full"
         style={{
-          backgroundImage: 'url(/hero_garden.jpg)',
+          backgroundImage: 'url(/images/enkoji/hero_temple.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: '50% 60%',
         }}
