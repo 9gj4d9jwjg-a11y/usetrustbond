@@ -113,10 +113,10 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-serif uppercase tracking-[0.02em] mb-6"
             style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}
           >
-            <span className="word inline-block">Horta</span>{' '}
-            <span className="word inline-block">e</span>{' '}
-            <span className="word inline-block">Árvores:</span>{' '}
-            <span className="word inline-block text-2xl sm:text-3xl lg:text-4xl block mt-2 lowercase italic opacity-90">Cultivando Alimentos e Futuro para Crianças</span>
+            <span className="word inline-block">De</span>{' '}
+            <span className="word inline-block">Semente</span>{' '}
+            <span className="word inline-block">a</span>{' '}
+            <span className="word inline-block">Esperança</span>
           </h1>
 
           {/* Subheadline */}
@@ -125,7 +125,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             className="text-lg md:text-xl text-white font-light tracking-wide max-w-2xl mx-auto mb-8"
             style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}
           >
-            Transforme sementes em esperança. Ajude a Enkoji a educar e alimentar através do contato com a natureza.
+            Ajude a transformar vulnerabilidade em aprendizado e alimento. Plante o futuro com as crianças da Enkoji.
           </p>
 
           {/* Badge */}
