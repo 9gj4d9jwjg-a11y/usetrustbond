@@ -4,12 +4,12 @@ import TransparencySection from '@/sections/TransparencySection';
 import LeaderSection from '@/sections/LeaderSection';
 import ExperienceSection from '@/sections/ExperienceSection';
 import ClosingCTASection from '@/sections/ClosingCTASection';
-import Navbar from '@/components/Navbar';
+import Navigation from '@/components/Navigation';
 
 export default function HortaEArvoresPage() {
   return (
     <main className="min-h-screen bg-[#F6F5F0]">
-      <Navbar />
+      <Navigation />
       <HeroSection />
       <ManifestoSection />
       <LeaderSection />

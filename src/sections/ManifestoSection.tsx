@@ -68,7 +68,7 @@ const ManifestoSection = ({ className = '' }: ManifestoSectionProps) => {
             <div className="card-enkoji overflow-hidden h-[50vh] lg:h-[70vh] relative">
               <img
                 src="/images/enkoji/aerial_temple.jpg"
-                alt="Vista aérea do Templo Enkoji e mata nativa"
+                alt="Arquitetura tradicional do Templo Enkoji entre as montanhas"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/20" />

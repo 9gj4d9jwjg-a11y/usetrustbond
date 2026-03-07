@@ -21,7 +21,7 @@ const ExperienceSection = () => {
       title: "Prática",
       subtitle: "Meditação e conexão em meio à natureza.",
       desc: "Retiros e vivências em grupo que buscam o equilíbrio através do silêncio e da presença consciente.",
-      image: "/images/enkoji/meditation_group.png",
+      image: "/images/enkoji/meditation_group.jpg",
       tag: "MEDITAÇÃO"
     }
   ];
