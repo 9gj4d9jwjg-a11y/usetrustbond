@@ -103,7 +103,7 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
             ref={ctaRef}
             className="btn-accent text-lg px-10 py-5 mb-6 inline-flex items-center gap-3 group"
           >
-            Fazer parte da prática
+            🌱 Doar agora: qualquer valor faz crescer
             <ArrowRight
               size={20}
               className="transition-transform group-hover:translate-x-1"
