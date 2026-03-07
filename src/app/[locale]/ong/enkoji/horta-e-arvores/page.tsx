@@ -4,6 +4,7 @@ import TransparencySection from '@/sections/TransparencySection';
 import LeaderSection from '@/sections/LeaderSection';
 import ExperienceSection from '@/sections/ExperienceSection';
 import ImpactSection from '@/sections/ImpactSection';
+import FAQSection from '@/sections/FAQSection';
 import ClosingCTASection from '@/sections/ClosingCTASection';
 import Navigation from '@/components/Navigation';
 
@@ -16,6 +17,7 @@ export default function HortaEArvoresPage() {
       <LeaderSection />
       <ExperienceSection />
       <ImpactSection />
+      <FAQSection />
       <TransparencySection />
       <ClosingCTASection />
     </main>
