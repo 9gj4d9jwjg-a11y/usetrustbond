@@ -7,11 +7,8 @@ export default async function OngPage({
 }) {
   const {slug} = await params;
 
-  if (slug === 'ong-original') {
-    return <OriginalOngTemplate />;
-  }
-
-  // In a real application, you would fetch the NGO data from a database based on the 'slug'.
+  // Static projects (like Enkoji) now have their own routes.
+  // This dynamic route handles project templates or DB-driven content.
   // For demonstration, we'll implement two different layout templates based on the slug.
 
   if (slug === 'ong-moderna') {
