@@ -84,12 +84,12 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
             ref={quoteRef}
             className="text-xl sm:text-2xl lg:text-3xl text-white font-serif leading-relaxed mb-10"
           >
-            Cada semente contém a árvore inteira.
+            Não importa o valor. 
             <br />
-            Cada doação contém o projeto inteiro.
+            Sua contribuição é a água que faz essa ideia crescer.
             <br />
-            <span className="text-white/80">
-              Mas só germina com cuidado, paciência e evidência.
+            <span className="text-white/80 text-lg mt-4 block">
+              Ajude-nos a fazer a diferença. Clique abaixo e faça parte dessa corrente do bem.
             </span>
           </blockquote>
 

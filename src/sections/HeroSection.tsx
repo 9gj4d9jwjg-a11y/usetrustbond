@@ -126,12 +126,10 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             ref={headlineRef}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-serif uppercase tracking-[0.02em] mb-6 drop-shadow-lg"
           >
-            <span className="word inline-block">Refúgio</span>{' '}
-            <span className="word inline-block">Zen</span>{' '}
-            <span className="word inline-block">em</span>{' '}
-            <span className="word inline-block">meio</span>{' '}
-            <span className="word inline-block">à</span>{' '}
-            <span className="word inline-block">natureza</span>
+            <span className="word inline-block">Horta</span>{' '}
+            <span className="word inline-block">e</span>{' '}
+            <span className="word inline-block">Árvores:</span>{' '}
+            <span className="word inline-block text-2xl sm:text-3xl lg:text-4xl block mt-2 lowercase italic opacity-90">Cultivando Alimentos e Futuro para Crianças</span>
           </h1>
 
           {/* Subheadline */}
@@ -139,7 +137,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             ref={subheadRef}
             className="text-lg md:text-xl text-white/95 font-light tracking-wide max-w-2xl mx-auto mb-8 drop-shadow-md"
           >
-            Meditação, harmonia e autoconhecimento há mais de 20 anos em Itapecerica da Serra.
+            Transforme sementes em esperança. Ajude a Enkoji a educar e alimentar através do contato com a natureza.
           </p>
 
           {/* Badge */}
