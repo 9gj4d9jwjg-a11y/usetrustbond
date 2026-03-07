@@ -139,7 +139,7 @@ const TransparencySection = ({ className = '' }: TransparencySectionProps) => {
                   <div
                     key={index}
                     ref={(el) => { stepsRef.current[index] = el; }}
-                    className="flex items-start gap-10 lg:gap-16 pl-16 lg:pl-28 relative"
+                    className="flex items-start gap-10 lg:gap-16 pl-24 lg:pl-32 relative"
                   >
                     {/* Icon Container */}
                     <div
