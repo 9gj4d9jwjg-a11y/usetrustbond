@@ -50,6 +50,15 @@ const ongs = [
         tag: 'ENERGIA LIMPA',
         budget: '$537K',
       },
+      {
+        title: 'Escala Eco-Limpeza',
+        subtitle: 'Transforme Resíduos em Limpeza Sustentável',
+        description: 'Escalando marcas de limpeza ecológica para 20M de pessoas na Grande SP.',
+        image: '/images/vivaterra/hero-bioenergy.jpg',
+        href: 'ong/vivaterra/eco-limpeza',
+        tag: 'LIMPEZA ECOLÓGICA',
+        budget: 'R$ 383K',
+      },
     ],
   },
 ];

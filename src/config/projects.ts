@@ -14,5 +14,10 @@ export const TRUSTBOND_PROJECTS = {
     url: 'https://www.trustbond.app/pt/sign-up?project_id=a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
     title: 'VivaTerra — Bio-Energy',
   },
+  VIVATERRA_ECO: {
+    id: 'PLACEHOLDER_ECO_ID',
+    url: 'https://www.trustbond.app/pt/sign-up?project_id=PLACEHOLDER_ECO_ID',
+    title: 'VivaTerra — Escala Eco-Limpeza',
+  },
   HOME: 'https://www.trustbond.app',
 };
