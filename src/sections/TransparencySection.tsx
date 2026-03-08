@@ -3,7 +3,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Lock, Camera, CheckCircle, Unlock, RefreshCw } from 'lucide-react';
+import { Shield, ClipboardCheck, ArrowRightCircle } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,29 +21,19 @@ const TransparencySection = ({ className = '' }: TransparencySectionProps) => {
 
   const steps = [
     {
-      icon: Lock,
-      title: 'Retenção',
-      desc: 'Doação fica em conta segregada.',
+      icon: Shield,
+      title: 'Capturamos sua confiança',
+      desc: 'Simboliza proteção e segurança da doação em conta segregada.',
     },
     {
-      icon: Camera,
-      title: 'Evidência',
-      desc: 'Fotos, notas fiscais, relatórios.',
+      icon: ClipboardCheck,
+      title: 'Verificamos com agilidade',
+      desc: 'Checkmark para validação rápida de notas e relatórios técnicos.',
     },
     {
-      icon: CheckCircle,
-      title: 'Verificação',
-      desc: 'Análise no mesmo dia.',
-    },
-    {
-      icon: Unlock,
-      title: 'Liberação',
-      desc: 'Recurso liberado para próxima fase.',
-    },
-    {
-      icon: RefreshCw,
-      title: 'Repetição',
-      desc: 'Ciclo continua até conclusão.',
+      icon: ArrowRightCircle,
+      title: 'Liberamos e aceleramos',
+      desc: 'Seta para liberação imediata da próxima fase e repetição do ciclo.',
     },
   ];
 

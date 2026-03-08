@@ -3,7 +3,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Lock, Camera, CheckCircle, Unlock, RefreshCw } from 'lucide-react';
+import { Shield, ClipboardCheck, ArrowRightCircle } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,11 +16,21 @@ const TransparencyEL = ({ className = '' }: { className?: string }) => {
   const iconsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const steps = [
-    { icon: Lock, title: 'Retenção', desc: 'Doação fica em conta segregada e segura.' },
-    { icon: Camera, title: 'Evidência', desc: 'Fotos georreferenciadas, notas fiscais, relatórios de avanço.' },
-    { icon: CheckCircle, title: 'Verificação', desc: 'Análise técnica no mesmo dia do envio.' },
-    { icon: Unlock, title: 'Liberação', desc: 'Recurso liberado para a próxima fase da obra.' },
-    { icon: RefreshCw, title: 'Repetição', desc: 'Ciclo continua até a conclusão total.' },
+    { 
+      icon: Shield, 
+      title: 'Capturamos sua confiança', 
+      desc: 'Simboliza proteção e segurança da doação em conta segregada e segura.' 
+    },
+    { 
+      icon: ClipboardCheck, 
+      title: 'Verificamos com agilidade', 
+      desc: 'Checkmark para validação rápida de notas fiscais e relatórios de avanço.' 
+    },
+    { 
+      icon: ArrowRightCircle, 
+      title: 'Liberamos e aceleramos', 
+      desc: 'Seta para liberação imediata para a próxima fase da obra e repetição do ciclo.' 
+    },
   ];
 
   useLayoutEffect(() => {
