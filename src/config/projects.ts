@@ -20,8 +20,8 @@ export const TRUSTBOND_PROJECTS = {
     title: 'VivaTerra — Escala Eco-Limpeza',
   },
   VIVATERRA_TECH: {
-    id: 'PLACEHOLDER_TECH_ID',
-    url: 'https://www.trustbond.app/pt/sign-up?project_id=PLACEHOLDER_TECH_ID',
+    id: 'fb79d1bd-efe1-4086-81a0-d1686cdb3b5f',
+    url: 'https://www.trustbond.app/pt/sign-up?project_id=fb79d1bd-efe1-4086-81a0-d1686cdb3b5f',
     title: 'VivaTerra — Tech-Rastreabilidade',
   },
   HOME: 'https://www.trustbond.app',
