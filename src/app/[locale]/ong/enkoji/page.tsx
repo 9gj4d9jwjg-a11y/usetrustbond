@@ -70,6 +70,24 @@ const ongs = [
       },
     ],
   },
+  {
+    name: 'Civic Voices',
+    slug: 'civic-voices',
+    tagline: 'Ideas that transform societies',
+    logo: '🗣️',
+    color: '#C41E3A',
+    projects: [
+      {
+        title: 'Participação Cidadã Digital',
+        subtitle: 'Amplifique Vozes na Estratégia Fiscal',
+        description: 'Plataforma digital para influenciar o County Fiscal Strategy Paper 2026 de Kakamega.',
+        image: '/images/vivaterra/hero-bioenergy.jpg',
+        href: 'ong/civic-voices/participacao-cidada',
+        tag: 'DEMOCRACIA DIGITAL',
+        budget: '$125K',
+      },
+    ],
+  },
 ];
 
 export default function ProjectsHubPage() {

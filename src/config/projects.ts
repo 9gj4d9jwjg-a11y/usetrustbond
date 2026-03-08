@@ -24,5 +24,10 @@ export const TRUSTBOND_PROJECTS = {
     url: 'https://www.trustbond.app/pt/sign-up?project_id=fb79d1bd-efe1-4086-81a0-d1686cdb3b5f',
     title: 'VivaTerra — Tech-Rastreabilidade',
   },
+  CIVIC_VOICES: {
+    id: 'PLACEHOLDER_CIVIC_ID',
+    url: 'https://www.trustbond.app/pt/sign-up?project_id=PLACEHOLDER_CIVIC_ID',
+    title: 'Civic Voices — Participação Cidadã Digital',
+  },
   HOME: 'https://www.trustbond.app',
 };
