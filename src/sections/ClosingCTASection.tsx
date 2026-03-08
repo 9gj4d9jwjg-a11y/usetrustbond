@@ -4,6 +4,7 @@ import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+import { TRUSTBOND_PROJECTS } from '@/config/projects';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,7 +17,7 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
   const bgRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const quoteRef = useRef<HTMLQuoteElement>(null);
-  const ctaRef = useRef<HTMLButtonElement>(null);
+  const ctaRef = useRef<HTMLAnchorElement>(null);
   const linkRef = useRef<HTMLAnchorElement>(null);
 
   useLayoutEffect(() => {
@@ -99,8 +100,11 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
           </blockquote>
 
           {/* CTA Button */}
-          <button
+          <a
             ref={ctaRef}
+            href={TRUSTBOND_PROJECTS.HORTA.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-accent text-lg px-10 py-5 mb-6 inline-flex items-center gap-3 group"
           >
             🌱 Doar agora: qualquer valor faz crescer
@@ -108,7 +112,7 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
               size={20}
               className="transition-transform group-hover:translate-x-1"
             />
-          </button>
+          </a>
 
           {/* Secondary Link */}
           <div>

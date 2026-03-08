@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronDown, Lock } from 'lucide-react';
+import { TRUSTBOND_PROJECTS } from '@/config/projects';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,8 +86,20 @@ const HeroEL = ({ className = '' }: { className?: string }) => {
           </div>
 
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary">Apoiar Projeto</button>
-            <button className="btn-secondary">Conheça o projeto</button>
+            <a 
+              href={TRUSTBOND_PROJECTS.ENERGIA.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary flex items-center justify-center"
+            >
+              Apoiar Projeto
+            </a>
+            <button 
+              onClick={() => document.getElementById('manifesto')?.scrollIntoView({ behavior: 'smooth' })}
+              className="btn-secondary"
+            >
+              Conheça o projeto
+            </button>
           </div>
         </div>
 

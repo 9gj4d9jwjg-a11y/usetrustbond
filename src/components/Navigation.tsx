@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
+import { TRUSTBOND_PROJECTS } from '@/config/projects';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,15 +79,18 @@ const Navigation = () => {
             ))}
 
             {/* Sticky CTA */}
-            <button
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-500 ${
+            <a
+              href={TRUSTBOND_PROJECTS.HOME}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-500 flex items-center justify-center ${
                 isScrolled
                   ? 'bg-[#4A5D23] text-white shadow-lg hover:bg-[#3d4e1c] scale-100 opacity-100'
                   : 'bg-white/20 text-white backdrop-blur-sm border border-white/30 hover:bg-white/30 scale-95 opacity-90'
               }`}
             >
               🌱 Doar agora
-            </button>
+            </a>
             
             <div className={`pl-4 border-l transition-colors ${isScrolled ? 'border-black/20 text-[#1F1F1F]' : 'border-white/20 text-white'}`}>
               <LanguageSwitcher />

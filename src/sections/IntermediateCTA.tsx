@@ -4,6 +4,7 @@ import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Heart } from 'lucide-react';
+import { TRUSTBOND_PROJECTS } from '@/config/projects';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,9 +55,14 @@ const IntermediateCTA = () => {
           Cada contribuição, por menor que seja, se transforma em terra fértil, educação e esperança.
         </p>
 
-        <button className="bg-white text-[#4A5D23] px-10 py-4 rounded-full text-lg font-medium hover:bg-white/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 inline-flex items-center gap-3">
+        <a 
+          href={TRUSTBOND_PROJECTS.HORTA.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-[#4A5D23] px-10 py-4 rounded-full text-lg font-medium hover:bg-white/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 inline-flex items-center gap-3"
+        >
           🌱 Doar agora: qualquer valor faz crescer
-        </button>
+        </a>
       </div>
     </div>
   );

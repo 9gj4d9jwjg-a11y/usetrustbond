@@ -4,6 +4,7 @@ import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+import { TRUSTBOND_PROJECTS } from '@/config/projects';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +12,7 @@ const ClosingCTAEL = ({ className = '' }: { className?: string }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const quoteRef = useRef<HTMLQuoteElement>(null);
-  const ctaRef = useRef<HTMLButtonElement>(null);
+  const ctaRef = useRef<HTMLAnchorElement>(null);
   const linkRef = useRef<HTMLAnchorElement>(null);
 
   useLayoutEffect(() => {
@@ -64,10 +65,16 @@ const ClosingCTAEL = ({ className = '' }: { className?: string }) => {
             </span>
           </blockquote>
 
-          <button ref={ctaRef} className="btn-accent text-lg px-10 py-5 mb-6 inline-flex items-center gap-3 group">
+          <a 
+            ref={ctaRef} 
+            href={TRUSTBOND_PROJECTS.ENERGIA.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-accent text-lg px-10 py-5 mb-6 inline-flex items-center gap-3 group"
+          >
             🌱 Doar agora: qualquer valor constrói esse futuro
             <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-          </button>
+          </a>
 
           <div>
             <a
