@@ -4,6 +4,7 @@ import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 const projects = [
   {
@@ -30,6 +31,8 @@ export default function EnkojiProjectsPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+  const params = useParams();
+  const locale = params.locale || 'pt';
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -77,7 +80,7 @@ export default function EnkojiProjectsPage() {
           {projects.map((project, i) => (
             <Link
               key={i}
-              href={project.href}
+              href={`/${locale}/ong/enkoji/${project.href}`}
               ref={(el) => { cardsRef.current[i] = el; }}
               className="group relative rounded-[2rem] overflow-hidden bg-[#2a2a2a] border border-white/5 hover:border-white/15 transition-all duration-500 hover:shadow-2xl hover:shadow-[#4A5D23]/10 flex flex-col"
             >
