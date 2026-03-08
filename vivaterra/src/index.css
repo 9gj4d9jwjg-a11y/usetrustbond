@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 160 30% 11%;
+    --foreground: 0 0% 95%;
+    --card: 160 30% 14%;
+    --card-foreground: 0 0% 95%;
+    --popover: 160 30% 14%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 160 30% 26%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 160 20% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 160 15% 25%;
+    --muted-foreground: 160 10% 60%;
+    --accent: 160 30% 35%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 160 15% 25%;
+    --input: 160 15% 25%;
+    --ring: 160 30% 35%;
+    --radius: 0.625rem;
+    
+    --color-forest: #2f574d;
+    --color-mint: #7ca296;
+    --color-dark-green: #1b3d36;
+    --color-cream: #f3f3f3;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-light-gray: #e4e4e4;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#1b3d36] text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#7ca296] to-[#2f574d];
+  }
+  
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-xl border border-white/10;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1b3d36;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2f574d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7ca296;
+}
+
+/* Animation keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(124, 162, 150, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(124, 162, 150, 0.6); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
