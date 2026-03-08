@@ -19,17 +19,17 @@ const TransparencyEL = ({ className = '' }: { className?: string }) => {
     { 
       icon: Shield, 
       title: 'Capturamos sua confiança', 
-      desc: 'Simboliza proteção e segurança da doação em conta segregada e segura.' 
+      desc: 'Doação 100% segura em conta segregada até vermos o progresso.' 
     },
     { 
       icon: ClipboardCheck, 
       title: 'Verificamos com agilidade', 
-      desc: 'Checkmark para validação rápida de notas fiscais e relatórios de avanço.' 
+      desc: 'Fotos, notas fiscais e relatórios analisados no mesmo dia.' 
     },
     { 
       icon: ArrowRightCircle, 
-      title: 'Liberamos e aceleramos', 
-      desc: 'Seta para liberação imediata para a próxima fase da obra e repetição do ciclo.' 
+      title: 'Liberamos se tudo OK', 
+      desc: 'Recursos liberados para próxima fase. Ciclo transparente continua!' 
     },
   ];
 
@@ -68,7 +68,7 @@ const TransparencyEL = ({ className = '' }: { className?: string }) => {
             <span className="eyebrow block mb-4">Transparência</span>
             <div className="hairline mb-8" />
             <h2 className="text-3xl lg:text-4xl font-serif text-[#1F1F1F] leading-tight mb-8">
-              Seu dinheiro só se move quando a telha é colocada.
+              Seu dinheiro só se move com resultados reais.
             </h2>
             <p className="text-[#6E6E6E] leading-relaxed text-lg">
               Cada etapa da obra só é liberada após evidências claras: fotos georreferenciadas, notas fiscais dos materiais, recibos de mão de obra e um breve relatório técnico de execução.
