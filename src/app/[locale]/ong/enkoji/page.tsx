@@ -115,22 +115,7 @@ export default function ProjectsHubPage() {
   }, []);
 
   return (
-    <main ref={containerRef} className="min-h-screen bg-[#1F1F1F] flex flex-col">
-      {/* Header */}
-      <div ref={headerRef} className="text-center pt-20 pb-8 px-6 lg:pt-28 lg:pb-12">
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center">
-            <span className="text-white font-serif text-sm">TB</span>
-          </div>
-          <span className="font-serif text-xs tracking-[0.3em] text-white/60 uppercase">TrustBond</span>
-        </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white uppercase tracking-[0.02em] mb-4">
-          Projetos
-        </h1>
-        <p className="text-lg text-white/60 font-light max-w-2xl mx-auto">
-          Escolha um projeto para apoiar. Sua contribuição é transparente, segura e verificada pela TrustBond.
-        </p>
-      </div>
+    <main ref={containerRef} className="min-h-screen bg-[#1F1F1F] flex flex-col pt-32">
 
       {/* ONG Sections */}
       <div className="flex-1 px-6 pb-20 lg:pb-28 max-w-[1400px] mx-auto w-full space-y-16">
@@ -198,13 +183,6 @@ export default function ProjectsHubPage() {
         ))}
       </div>
 
-      {/* Footer */}
-      <footer className="py-6 px-6 border-t border-white/5">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-[1400px] mx-auto">
-          <span className="text-xs text-white/30">Contribuição transparente e segura – garantia TrustBond.app</span>
-          <span className="text-xs text-white/20">© 2026 TrustBond</span>
-        </div>
-      </footer>
     </main>
   );
 }

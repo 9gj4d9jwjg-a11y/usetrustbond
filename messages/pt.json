@@ -2,5 +2,62 @@
   "HomePage": {
     "title": "Templo Enkoji",
     "description": "Um refúgio Zen Budista em meio à natureza de Itapecerica da Serra, dedicado à meditação, paz e ao autoconhecimento."
+  },
+  "HeroCivic": {
+    "donateNow": "Apoiar Projeto",
+    "meetProject": "Conheça o projeto",
+    "integrityScore": "Integrity Score",
+    "trustScore": "TrustScore",
+    "fundingGoal": "Meta de arrecadação",
+    "digitalParticipation": "Participação Digital",
+    "county": "Kakamega County",
+    "citizenEngagement": "Engajamento Cidadão",
+    "participantGoal": "% da meta de participantes",
+    "municipalities": "Municipalidades",
+    "engagedCitizens": "Cidadãos Engajados",
+    "scrollExplore": "Role para explorar"
+  },
+  "FooterCivic": {
+    "quickLinks": "Links Rápidos",
+    "contact": "Contato"
+  },
+  "DonationValuesCivic": {
+    "directImpact": "Impacto direto",
+    "donate": "Doar"
+  },
+  "Navigation": {
+    "project": "O projeto",
+    "howItWorks": "Como funciona",
+    "impact": "Impacto",
+    "faq": "FAQ",
+    "donateNow": "Doar agora"
+  },
+  "HeroSection": {
+    "titlePart1": "De",
+    "titlePart2": "Semente",
+    "titlePart3": "a",
+    "titlePart4": "Esperança",
+    "subtitle": "Ajude a transformar vulnerabilidade em aprendizado e alimento. Plante o futuro com as crianças da Enkoji.",
+    "badgeText": "Contribuição transparente e segura - garantia TrustBond.app",
+    "supportProject": "Apoiar Projeto",
+    "meetProject": "Conheça o projeto",
+    "scrollExplore": "Role para explorar"
+  },
+  "IntermediateCTA": {
+    "title": "Você já imaginou o sorriso de uma criança colhendo o próprio alimento?",
+    "subtitle": "Cada contribuição, por menor que seja, se transforma em terra fértil, educação e esperança.",
+    "donateButton": "🌱 Doar agora: qualquer valor faz crescer"
+  },
+  "ClosingCTA": {
+    "quotePart1": "Não importa o valor.",
+    "quotePart2": "Sua contribuição é a água que faz essa ideia crescer.",
+    "quotePart3": "Ajude-nos a fazer a diferença. Clique abaixo e faça parte dessa corrente do bem.",
+    "donateButton": "🌱 Doar agora: qualquer valor faz crescer",
+    "visitTempleLink": "Ou visite o templo primeiro",
+    "visitTempleAlert": "Em breve: página de visitação ao templo",
+    "transparencyLink": "Transparência",
+    "transparencyAlert": "Em breve: página de transparência",
+    "contactLink": "Contato",
+    "contactAlert": "Em breve: página de contato"
   }
 }

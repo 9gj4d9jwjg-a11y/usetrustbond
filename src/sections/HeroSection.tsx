@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronDown, Lock } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { TRUSTBOND_PROJECTS } from '@/config/projects';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,6 +14,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ className = '' }: HeroSectionProps) => {
+  const t = useTranslations('HeroSection');
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
@@ -114,10 +116,10 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-serif uppercase tracking-[0.02em] mb-6"
             style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}
           >
-            <span className="word inline-block">De</span>{' '}
-            <span className="word inline-block">Semente</span>{' '}
-            <span className="word inline-block">a</span>{' '}
-            <span className="word inline-block">Esperança</span>
+            <span className="word inline-block">{t('titlePart1')}</span>{' '}
+            <span className="word inline-block">{t('titlePart2')}</span>{' '}
+            <span className="word inline-block">{t('titlePart3')}</span>{' '}
+            <span className="word inline-block">{t('titlePart4')}</span>
           </h1>
 
           {/* Subheadline */}
@@ -126,7 +128,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             className="text-lg md:text-xl text-white font-light tracking-wide max-w-2xl mx-auto mb-8"
             style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}
           >
-            Ajude a transformar vulnerabilidade em aprendizado e alimento. Plante o futuro com as crianças da Enkoji.
+            {t('subtitle')}
           </p>
 
           {/* Badge */}
@@ -136,7 +138,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           >
             <Lock size={14} className="text-[#4A5D23]" />
             <span className="text-sm text-[#1F1F1F] font-medium">
-              Contribuição transparente e segura - garantia TrustBond.app
+              {t('badgeText')}
             </span>
           </div>
 
@@ -148,13 +150,13 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
               rel="noopener noreferrer"
               className="btn-primary flex items-center justify-center"
             >
-              Apoiar Projeto
+              {t('supportProject')}
             </a>
             <button 
               onClick={() => document.getElementById('manifesto')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-secondary"
             >
-              Conheça o projeto
+              {t('meetProject')}
             </button>
           </div>
         </div>
@@ -165,7 +167,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           className="absolute bottom-[4vh] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}
         >
-          <span className="text-xs text-white tracking-wide">Role para explorar</span>
+          <span className="text-xs text-white tracking-wide">{t('scrollExplore')}</span>
           <ChevronDown size={20} className="text-white animate-bounce" />
         </div>
       </div>

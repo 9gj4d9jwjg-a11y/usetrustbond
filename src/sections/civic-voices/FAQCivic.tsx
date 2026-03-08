@@ -7,15 +7,30 @@ import { Plus, X } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const faqs = [
-  { question: 'Como funciona o processo de doação?', answer: 'Sua doação é feita de forma 100% segura através da plataforma TrustBond. O valor fica em uma conta segregada e só é liberado para o projeto após a comprovação de cada etapa executada. Você recebe atualizações em tempo real sobre o andamento e o impacto da sua contribuição.' },
-  { question: 'Como acompanho o impacto da minha contribuição?', answer: 'Você terá acesso a um dashboard exclusivo com métricas em tempo real: número de cidadãos engajados, consultas realizadas, propostas apresentadas e fotos das atividades. Além disso, enviamos relatórios mensais detalhados por e-mail.' },
-  { question: 'O que acontece se a meta não for atingida?', answer: 'Se o projeto não atingir a meta mínima, você poderá optar por receber o reembolso integral da sua doação ou redirecionar o valor para outro projeto de engajamento cidadão da Civic Voices. Nossa política de transparência garante que seu dinheiro só seja usado conforme o previsto.' },
-  { question: 'Posso participar das consultas presenciais?', answer: 'Sim! Doadores acima de R$ 500 têm direito a participar das consultas públicas presenciais em Kakamega. Você poderá ver de perto como a plataforma conecta cidadãos e tomadores de decisão e conhecer a equipe por trás do projeto.' },
-  { question: 'Como é garantida a transparência do projeto?', answer: 'Utilizamos a tecnologia TrustBond que documenta cada etapa: relatórios de participação, métricas de engajamento, atas das consultas públicas e auditorias independentes. Tudo isso é disponibilizado em tempo real no nosso dashboard público.' },
-];
+export interface FAQCivicProps {
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
+  contactText: string;
+  contactLinkText: string;
+  contactLink?: string;
+  className?: string;
+}
 
-export default function FAQCivic({ className = '' }: { className?: string }) {
+export default function FAQCivic({ 
+  title,
+  titleHighlight,
+  subtitle,
+  faqs,
+  contactText,
+  contactLinkText,
+  contactLink = '#',
+  className = '' 
+}: FAQCivicProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const faqsRef = useRef<HTMLDivElement>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -33,8 +48,8 @@ export default function FAQCivic({ className = '' }: { className?: string }) {
     <section ref={sectionRef} className={`relative py-24 lg:py-32 bg-white ${className}`}>
       <div className="max-w-4xl mx-auto px-6 sm:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-4">Perguntas <span className="text-[#C41E3A]">Frequentes</span></h2>
-          <p className="text-xl text-[#6B7280]">Tire suas dúvidas sobre o projeto e como funciona a doação</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-4">{title} <span className="text-[#C41E3A]">{titleHighlight}</span></h2>
+          <p className="text-xl text-[#6B7280]">{subtitle}</p>
         </div>
         <div ref={faqsRef} className="space-y-4">
           {faqs.map((faq, i) => (
@@ -52,8 +67,8 @@ export default function FAQCivic({ className = '' }: { className?: string }) {
           ))}
         </div>
         <div className="text-center mt-12">
-          <p className="text-[#6B7280] mb-2">Ainda tem dúvidas?</p>
-          <a href="#" className="text-[#C41E3A] font-semibold hover:underline">Entre em contato conosco →</a>
+          <p className="text-[#6B7280] mb-2">{contactText}</p>
+          <a href={contactLink} className="text-[#C41E3A] font-semibold hover:underline">{contactLinkText}</a>
         </div>
       </div>
     </section>

@@ -2,5 +2,62 @@
   "HomePage": {
     "title": "Enkoji Temple",
     "description": "A Zen Buddhist refuge amidst the nature of Itapecerica da Serra, dedicated to meditation, peace, and self-knowledge."
+  },
+  "HeroCivic": {
+    "donateNow": "Support Project",
+    "meetProject": "Meet the project",
+    "integrityScore": "Integrity Score",
+    "trustScore": "TrustScore",
+    "fundingGoal": "Funding Goal",
+    "digitalParticipation": "Digital Participation",
+    "county": "Kakamega County",
+    "citizenEngagement": "Citizen Engagement",
+    "participantGoal": "% of participant goal",
+    "municipalities": "Municipalities",
+    "engagedCitizens": "Engaged Citizens",
+    "scrollExplore": "Scroll to explore"
+  },
+  "FooterCivic": {
+    "quickLinks": "Quick Links",
+    "contact": "Contact"
+  },
+  "DonationValuesCivic": {
+    "directImpact": "Direct impact",
+    "donate": "Donate"
+  },
+  "Navigation": {
+    "project": "The project",
+    "howItWorks": "How it works",
+    "impact": "Impact",
+    "faq": "FAQ",
+    "donateNow": "Donate now"
+  },
+  "HeroSection": {
+    "titlePart1": "From",
+    "titlePart2": "Seed",
+    "titlePart3": "to",
+    "titlePart4": "Hope",
+    "subtitle": "Help transform vulnerability into learning and nourishment. Plant the future with Enkoji's children.",
+    "badgeText": "Transparent and secure contribution - TrustBond.app guarantee",
+    "supportProject": "Support Project",
+    "meetProject": "Meet the project",
+    "scrollExplore": "Scroll to explore"
+  },
+  "IntermediateCTA": {
+    "title": "Have you ever imagined the smile of a child harvesting their own food?",
+    "subtitle": "Each contribution, however small, turns into fertile soil, education, and hope.",
+    "donateButton": "🌱 Donate now: any amount makes it grow"
+  },
+  "ClosingCTA": {
+    "quotePart1": "The amount doesn't matter.",
+    "quotePart2": "Your contribution is the water that makes this idea grow.",
+    "quotePart3": "Help us make a difference. Click below and be part of this chain of good.",
+    "donateButton": "🌱 Donate now: any amount makes it grow",
+    "visitTempleLink": "Or visit the temple first",
+    "visitTempleAlert": "Coming soon: temple visitation page",
+    "transparencyLink": "Transparency",
+    "transparencyAlert": "Coming soon: transparency page",
+    "contactLink": "Contact",
+    "contactAlert": "Coming soon: contact page"
   }
 }

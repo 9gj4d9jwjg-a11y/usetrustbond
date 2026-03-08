@@ -7,12 +7,20 @@ import { MapPin, Users, MessageSquare, ShieldCheck } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const metrics = [
-  { icon: MapPin, value: 50, suffix: '+', label: 'Municipalidades', description: 'Cobertura em expansão constante' },
-  { icon: Users, value: 10, suffix: 'K+', label: 'Cidadãos Engajados', description: 'Participantes ativos na plataforma' },
-  { icon: MessageSquare, value: 15, suffix: '', label: 'Consultas Públicas', description: 'Realizadas em 2025-2026' },
-  { icon: ShieldCheck, value: 98, suffix: '%', label: 'Transparência', description: 'TrustScore verificado' },
-];
+const iconMap = [MapPin, Users, MessageSquare, ShieldCheck];
+
+export interface ImpactMetricsCivicProps {
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  metrics: {
+    value: number;
+    suffix: string;
+    label: string;
+    description: string;
+  }[];
+  className?: string;
+}
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   const [display, setDisplay] = useState(0);
@@ -26,7 +34,13 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   return <span ref={ref}>{display}{suffix}</span>;
 }
 
-export default function ImpactMetricsCivic({ className = '' }: { className?: string }) {
+export default function ImpactMetricsCivic({ 
+  title,
+  titleHighlight,
+  subtitle,
+  metrics,
+  className = '' 
+}: ImpactMetricsCivicProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
@@ -43,20 +57,23 @@ export default function ImpactMetricsCivic({ className = '' }: { className?: str
     <section id="impacto" ref={sectionRef} className={`relative py-24 lg:py-32 bg-[#1a1a1a] text-white ${className}`}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Impacto em <span className="text-[#FFD700]">Números</span></h2>
-          <p className="text-xl text-gray-400">O que medimos além do dinheiro — resultados concretos de transformação democrática</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{title} <span className="text-[#FFD700]">{titleHighlight}</span></h2>
+          <p className="text-xl text-gray-400">{subtitle}</p>
         </div>
         <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {metrics.map((m, i) => (
-            <div key={i} className="group p-8 rounded-3xl bg-white/5 backdrop-blur border border-white/10 hover:border-[#FFD700]/50 transition-all duration-500 hover:-translate-y-2 text-center">
-              <div className="w-14 h-14 rounded-2xl bg-[#FFD700]/20 flex items-center justify-center mb-6 mx-auto group-hover:bg-[#FFD700]/30 transition-colors">
-                <m.icon className="w-7 h-7 text-[#FFD700]" />
+          {metrics.map((m, i) => {
+            const Icon = iconMap[i % iconMap.length];
+            return (
+              <div key={i} className="group p-8 rounded-3xl bg-white/5 backdrop-blur border border-white/10 hover:border-[#FFD700]/50 transition-all duration-500 hover:-translate-y-2 text-center">
+                <div className="w-14 h-14 rounded-2xl bg-[#FFD700]/20 flex items-center justify-center mb-6 mx-auto group-hover:bg-[#FFD700]/30 transition-colors">
+                  <Icon className="w-7 h-7 text-[#FFD700]" />
+                </div>
+                <div className="text-4xl sm:text-5xl font-bold text-[#FFD700] mb-2"><AnimatedNumber value={m.value} suffix={m.suffix} /></div>
+                <div className="font-semibold text-white/90 text-lg mb-1">{m.label}</div>
+                <p className="text-sm text-gray-400">{m.description}</p>
               </div>
-              <div className="text-4xl sm:text-5xl font-bold text-[#FFD700] mb-2"><AnimatedNumber value={m.value} suffix={m.suffix} /></div>
-              <div className="font-semibold text-white/90 text-lg mb-1">{m.label}</div>
-              <p className="text-sm text-gray-400">{m.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -2,10 +2,36 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ArrowRight, ChevronDown, Shield, Megaphone, Users, MapPin } from 'lucide-react';
+import { ArrowRight, ChevronDown, Megaphone, Users, MapPin } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { TRUSTBOND_PROJECTS } from '@/config/projects';
 
-export default function HeroCivic({ className = '' }: { className?: string }) {
+export interface HeroCivicProps {
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  badgeText: string;
+  integrityScore: number;
+  goalAmount: string;
+  engagementStats: {
+    percentage: number;
+    municipalities: number;
+    citizens: string;
+  };
+  className?: string;
+}
+
+export default function HeroCivic({ 
+  title,
+  titleHighlight,
+  subtitle,
+  badgeText,
+  integrityScore,
+  goalAmount,
+  engagementStats,
+  className = '' 
+}: HeroCivicProps) {
+  const t = useTranslations('HeroCivic');
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -38,47 +64,46 @@ export default function HeroCivic({ className = '' }: { className?: string }) {
           <div>
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#FFD700] text-[#1a1a1a] mb-8">
               <span className="w-2 h-2 bg-[#8B0000] rounded-full animate-pulse" />
-              <span className="text-sm font-semibold">Projeto Ativo</span>
+              <span className="text-sm font-semibold">{badgeText}</span>
             </div>
 
             <h1 ref={titleRef} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-              Amplifique Vozes Cidadãs na <span className="text-[#FFD700]">Estratégia Fiscal</span>
+              {title} <span className="text-[#FFD700]">{titleHighlight}</span>
             </h1>
 
             <p ref={subtitleRef} className="text-xl text-white/80 max-w-xl mb-10">
-              Plataforma digital de participação cidadã para influenciar o County Fiscal Strategy Paper 2026 de Kakamega. Sua voz molda prioridades de desenvolvimento.
+              {subtitle}
             </p>
 
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 mb-12">
               <a href={TRUSTBOND_PROJECTS.HOME} target="_blank" rel="noopener noreferrer"
                 className="bg-[#FFD700] hover:bg-yellow-300 text-[#1a1a1a] font-bold rounded-xl px-10 py-5 text-lg transition-all duration-300 shadow-xl inline-flex items-center justify-center gap-3 group">
-                Apoiar Projeto <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                {t('donateNow')} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <button onClick={() => document.getElementById('projeto')?.scrollIntoView({ behavior: 'smooth' })}
                 className="border-2 border-white/60 hover:border-white text-white font-medium rounded-xl px-8 py-5 text-lg transition-all duration-300">
-                Conheça o projeto
+                {t('meetProject')}
               </button>
             </div>
 
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-3">
                 <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
-                  <span className="font-bold text-[#FFD700] text-xl">98</span>
+                  <span className="font-bold text-[#FFD700] text-xl">{integrityScore}</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-white text-sm">Integrity Score</p>
-                  <p className="text-white/50 text-xs">TrustScore</p>
+                  <p className="font-semibold text-white text-sm">{t('integrityScore')}</p>
+                  <p className="text-white/50 text-xs">{t('trustScore')}</p>
                 </div>
               </div>
               <div className="h-8 w-px bg-white/30" />
               <div>
-                <p className="text-2xl font-bold text-white">$125K</p>
-                <p className="text-white/50 text-xs">Meta de arrecadação</p>
+                <p className="text-2xl font-bold text-white">{goalAmount}</p>
+                <p className="text-white/50 text-xs">{t('fundingGoal')}</p>
               </div>
             </div>
           </div>
 
-          {/* Right column — engagement card */}
           <div ref={cardRef} className="hidden lg:block">
             <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
               <div className="flex items-center gap-3 mb-6">
@@ -86,28 +111,28 @@ export default function HeroCivic({ className = '' }: { className?: string }) {
                   <Megaphone className="w-6 h-6 text-[#1a1a1a]" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white">Participação Digital</p>
-                  <p className="text-sm text-white/50">Kakamega County</p>
+                  <p className="font-semibold text-white">{t('digitalParticipation')}</p>
+                  <p className="text-sm text-white/50">{t('county')}</p>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="bg-white/10 rounded-xl p-4">
-                  <p className="text-sm text-white/50 mb-2">Engajamento Cidadão</p>
+                  <p className="text-sm text-white/50 mb-2">{t('citizenEngagement')}</p>
                   <div className="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                    <div className="bg-[#FFD700] h-2 rounded-full" style={{ width: '65%' }} />
+                    <div className="bg-[#FFD700] h-2 rounded-full" style={{ width: `${engagementStats.percentage}%` }} />
                   </div>
-                  <p className="text-xs mt-2 text-white/40">65% da meta de participantes</p>
+                  <p className="text-xs mt-2 text-white/40">{engagementStats.percentage}{t('participantGoal')}</p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <MapPin className="w-5 h-5 text-[#FFD700] mx-auto mb-1" />
-                    <p className="text-2xl font-bold text-[#FFD700]">50+</p>
-                    <p className="text-xs text-white/50">Municipalidades</p>
+                    <p className="text-2xl font-bold text-[#FFD700]">{engagementStats.municipalities}+</p>
+                    <p className="text-xs text-white/50">{t('municipalities')}</p>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <Users className="w-5 h-5 text-[#FFD700] mx-auto mb-1" />
-                    <p className="text-2xl font-bold text-[#FFD700]">10K+</p>
-                    <p className="text-xs text-white/50">Cidadãos Engajados</p>
+                    <p className="text-2xl font-bold text-[#FFD700]">{engagementStats.citizens}</p>
+                    <p className="text-xs text-white/50">{t('engagedCitizens')}</p>
                   </div>
                 </div>
               </div>
@@ -117,7 +142,7 @@ export default function HeroCivic({ className = '' }: { className?: string }) {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 animate-bounce">
-        <span className="text-xs uppercase tracking-widest">Role para explorar</span><ChevronDown className="w-5 h-5" />
+        <span className="text-xs uppercase tracking-widest">{t('scrollExplore')}</span><ChevronDown className="w-5 h-5" />
       </div>
     </section>
   );

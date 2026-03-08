@@ -2,5 +2,62 @@
   "HomePage": {
     "title": "Temple Enkoji",
     "description": "Un refuge bouddhiste zen au cœur de la nature d'Itapecerica da Serra, dédié à la méditation, à la paix et à la connaissance de soi."
+  },
+  "HeroCivic": {
+    "donateNow": "Soutenir le projet",
+    "meetProject": "Découvrez le projet",
+    "integrityScore": "Integrity Score",
+    "trustScore": "TrustScore",
+    "fundingGoal": "Objectif de financement",
+    "digitalParticipation": "Participation Numérique",
+    "county": "Kakamega County",
+    "citizenEngagement": "Engagement Citoyen",
+    "participantGoal": "% de l'objectif de participants",
+    "municipalities": "Municipalités",
+    "engagedCitizens": "Citoyens Engagés",
+    "scrollExplore": "Faites défiler pour explorer"
+  },
+  "FooterCivic": {
+    "quickLinks": "Liens Rapides",
+    "contact": "Contact"
+  },
+  "DonationValuesCivic": {
+    "directImpact": "Impact direct",
+    "donate": "Donner"
+  },
+  "Navigation": {
+    "project": "Le projet",
+    "howItWorks": "Comment ça marche",
+    "impact": "Impact",
+    "faq": "FAQ",
+    "donateNow": "Donner maintenant"
+  },
+  "HeroSection": {
+    "titlePart1": "De la",
+    "titlePart2": "Graine",
+    "titlePart3": "à",
+    "titlePart4": "l'Espoir",
+    "subtitle": "Aidez à transformer la vulnérabilité en apprentissage et en nourriture. Plantez l'avenir avec les enfants d'Enkoji.",
+    "badgeText": "Contribution transparente et sécurisée - garantie TrustBond.app",
+    "supportProject": "Soutenir le Projet",
+    "meetProject": "Découvrez le projet",
+    "scrollExplore": "Explorer"
+  },
+  "IntermediateCTA": {
+    "title": "Avez-vous déjà imaginé le sourire d'un enfant récoltant sa propre nourriture ?",
+    "subtitle": "Chaque contribution, aussi petite soit-elle, se transforme en terre fertile, en éducation et en espoir.",
+    "donateButton": "🌱 Donner maintenant : n'importe quel montant fait grandir"
+  },
+  "ClosingCTA": {
+    "quotePart1": "Le montant n'a pas d'importance.",
+    "quotePart2": "Votre contribution est l'eau qui fait grandir cette idée.",
+    "quotePart3": "Aidez-nous à faire la différence. Cliquez ci-dessous et faites partie de cette chaîne de bien.",
+    "donateButton": "🌱 Donner maintenant : n'importe quel montant fait grandir",
+    "visitTempleLink": "Ou visitez le temple d'abord",
+    "visitTempleAlert": "Prochainement : page de visite du temple",
+    "transparencyLink": "Transparence",
+    "transparencyAlert": "Prochainement : page de transparence",
+    "contactLink": "Contact",
+    "contactAlert": "Prochainement : page de contact"
   }
 }

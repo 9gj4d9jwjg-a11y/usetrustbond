@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 import { TRUSTBOND_PROJECTS } from '@/config/projects';
 
 const Navigation = () => {
+  const t = useTranslations('Navigation');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -19,10 +21,10 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { label: 'O projeto', href: '#manifesto' },
-    { label: 'Como funciona', href: '#transparency' },
-    { label: 'Impacto', href: '#impact' },
-    { label: 'FAQ', href: '#faq' },
+    { label: t('project'), href: '#manifesto' },
+    { label: t('howItWorks'), href: '#transparency' },
+    { label: t('impact'), href: '#impact' },
+    { label: t('faq'), href: '#faq' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -55,12 +57,12 @@ const Navigation = () => {
             <div className={`w-8 h-8 rounded-full border flex items-center justify-center backdrop-blur-sm transition-colors ${
               isScrolled ? 'border-[#1F1F1F]/20 bg-[#1F1F1F]/5' : 'border-white/40 bg-white/10'
             }`}>
-              <span className={isScrolled ? 'text-[#1F1F1F] text-sm' : 'text-white text-sm'}>円</span>
+              <span className={isScrolled ? 'text-[#1F1F1F] text-sm' : 'text-white text-sm'}>T</span>
             </div>
             <span className={`font-serif text-lg tracking-widest transition-colors ${
               isScrolled ? 'text-[#1F1F1F]' : 'text-white'
             }`}>
-              ENKOJI
+              TRUSTBOND
             </span>
           </a>
 
@@ -89,7 +91,7 @@ const Navigation = () => {
                   : 'bg-white/20 text-white backdrop-blur-sm border border-white/30 hover:bg-white/30 scale-95 opacity-90'
               }`}
             >
-              🌱 Doar agora
+              {t('donateNow')}
             </a>
             
             <div className={`pl-4 border-l transition-colors ${isScrolled ? 'border-black/20 text-[#1F1F1F]' : 'border-white/20 text-white'}`}>

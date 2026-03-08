@@ -7,7 +7,25 @@ import { AlertTriangle, Zap, CheckCircle } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function WhyEssentialCivic({ className = '' }: { className?: string }) {
+export interface WhyEssentialCivicProps {
+  title: string;
+  titleHighlight: string;
+  description: string;
+  cards: {
+    challenge: { title: string; description: string; };
+    solution: { title: string; badge: string; description: string; };
+    impact: { title: string; description: string; };
+  };
+  className?: string;
+}
+
+export default function WhyEssentialCivic({ 
+  title,
+  titleHighlight,
+  description,
+  cards,
+  className = '' 
+}: WhyEssentialCivicProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -25,10 +43,10 @@ export default function WhyEssentialCivic({ className = '' }: { className?: stri
       <div className="max-w-7xl mx-auto px-6 sm:px-8" ref={contentRef}>
         <div className="text-center mb-16">
           <h2 className="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-4">
-            Por que este projeto é <span className="text-[#C41E3A]">essencial?</span>
+            {title} <span className="text-[#C41E3A]">{titleHighlight}</span>
           </h2>
           <p className="reveal text-xl text-[#6B7280] max-w-3xl mx-auto">
-            Imagine uma democracia onde cada cidadão tem voz ativa nas decisões fiscais que moldam seu futuro. Em Kakamega, estamos transformando isso em realidade.
+            {description}
           </p>
         </div>
 
@@ -37,25 +55,25 @@ export default function WhyEssentialCivic({ className = '' }: { className?: stri
             <div className="w-14 h-14 rounded-xl bg-[#C41E3A] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <AlertTriangle className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">O Desafio</h3>
-            <p className="text-[#6B7280] leading-relaxed">Cidadãos enfrentam barreiras de acesso, distância e tempo para participar ativamente da governança. Decisões fiscais são tomadas sem consulta adequada às comunidades.</p>
+            <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{cards.challenge.title}</h3>
+            <p className="text-[#6B7280] leading-relaxed">{cards.challenge.description}</p>
           </div>
 
           <div className="reveal p-8 rounded-3xl bg-gradient-to-br from-yellow-50 to-white border-2 border-[#FFD700]/40 hover:-translate-y-2 transition-all duration-500 relative group">
-            <div className="absolute -top-3 right-6 bg-[#C41E3A] text-white text-xs px-4 py-1 rounded-full font-semibold">SOLUÇÃO</div>
+            <div className="absolute -top-3 right-6 bg-[#C41E3A] text-white text-xs px-4 py-1 rounded-full font-semibold">{cards.solution.badge}</div>
             <div className="w-14 h-14 rounded-xl bg-[#FFD700] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Zap className="w-7 h-7 text-[#1a1a1a]" />
             </div>
-            <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">A Solução</h3>
-            <p className="text-[#6B7280] leading-relaxed">Plataforma digital que remove barreiras, permitindo engajamento significativo, acompanhamento de prioridades e colaboração em iniciativas de desenvolvimento.</p>
+            <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{cards.solution.title}</h3>
+            <p className="text-[#6B7280] leading-relaxed">{cards.solution.description}</p>
           </div>
 
           <div className="reveal p-8 rounded-3xl bg-gradient-to-br from-green-50 to-white border-2 border-green-500/30 hover:-translate-y-2 transition-all duration-500 group">
             <div className="w-14 h-14 rounded-xl bg-green-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <CheckCircle className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">O Impacto</h3>
-            <p className="text-[#6B7280] leading-relaxed">Participação cidadã ampliada, políticas públicas mais responsivas e comunidades empoderadas para moldar seu próprio desenvolvimento.</p>
+            <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{cards.impact.title}</h3>
+            <p className="text-[#6B7280] leading-relaxed">{cards.impact.description}</p>
           </div>
         </div>
       </div>

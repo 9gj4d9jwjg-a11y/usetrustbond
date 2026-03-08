@@ -26,6 +26,7 @@ export default function LanguageSwitcher() {
         disabled={isPending}
         onChange={onSelectChange}
         className="bg-transparent appearance-none outline-none cursor-pointer text-sm font-medium tracking-wider"
+        style={{ color: 'currentColor' }}
       >
         <option value="pt" className="text-black">PT</option>
         <option value="en" className="text-black">EN</option>

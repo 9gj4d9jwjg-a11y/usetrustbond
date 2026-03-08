@@ -4,6 +4,7 @@ import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { TRUSTBOND_PROJECTS } from '@/config/projects';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,6 +14,7 @@ interface ClosingCTASectionProps {
 }
 
 const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
+  const t = useTranslations('ClosingCTA');
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -90,12 +92,12 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
             ref={quoteRef}
             className="text-xl sm:text-2xl lg:text-3xl text-white font-serif leading-relaxed mb-10"
           >
-            Não importa o valor. 
+            {t('quotePart1')} 
             <br />
-            Sua contribuição é a água que faz essa ideia crescer.
+            {t('quotePart2')}
             <br />
             <span className="text-white/80 text-lg mt-4 block">
-              Ajude-nos a fazer a diferença. Clique abaixo e faça parte dessa corrente do bem.
+              {t('quotePart3')}
             </span>
           </blockquote>
 
@@ -107,7 +109,7 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
             rel="noopener noreferrer"
             className="btn-accent text-lg px-10 py-5 mb-6 inline-flex items-center gap-3 group"
           >
-            🌱 Doar agora: qualquer valor faz crescer
+            {t('donateButton')}
             <ArrowRight
               size={20}
               className="transition-transform group-hover:translate-x-1"
@@ -121,11 +123,11 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                alert('Em breve: página de visitação ao templo');
+                alert(t('visitTempleAlert'));
               }}
               className="text-white/70 text-sm hover:text-white transition-colors underline underline-offset-4"
             >
-              Ou visite o templo primeiro
+              {t('visitTempleLink')}
             </a>
           </div>
         </div>
@@ -157,7 +159,7 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
               </text>
             </svg>
             <span className="font-serif text-xs tracking-widest text-white/60">
-              ENKOJI
+              TRUSTBOND
             </span>
           </div>
 
@@ -175,21 +177,21 @@ const ClosingCTASection = ({ className = '' }: ClosingCTASectionProps) => {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                alert('Em breve: página de transparência');
+                alert(t('transparencyAlert'));
               }}
               className="text-xs text-white/60 hover:text-white transition-colors"
             >
-              Transparência
+              {t('transparencyLink')}
             </a>
             <a
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                alert('Em breve: página de contato');
+                alert(t('contactAlert'));
               }}
               className="text-xs text-white/60 hover:text-white transition-colors"
             >
-              Contato
+              {t('contactLink')}
             </a>
           </div>
 
