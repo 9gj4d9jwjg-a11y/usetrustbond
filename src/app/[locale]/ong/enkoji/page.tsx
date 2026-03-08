@@ -59,6 +59,15 @@ const ongs = [
         tag: 'LIMPEZA ECOLÓGICA',
         budget: 'R$ 383K',
       },
+      {
+        title: 'Tech-Rastreabilidade',
+        subtitle: 'Evidências em Blockchain',
+        description: 'App gamificado, marketplace, wallet tokenizada e rastreabilidade total.',
+        image: '/images/vivaterra/hero-bioenergy.jpg',
+        href: 'ong/vivaterra/tech-rastreabilidade',
+        tag: 'BLOCKCHAIN & ESG',
+        budget: '$184K',
+      },
     ],
   },
 ];
