@@ -1,188 +1,45 @@
-"use client";
+import { getProjectSections } from '@/lib/services/projectService';
+import HeroSection from '@/sections/HeroSection';
+import IntermediateCTA from '@/sections/IntermediateCTA';
+import ClosingCTASection from '@/sections/ClosingCTASection';
 
-import { useRef, useLayoutEffect } from 'react';
-import { gsap } from 'gsap';
-import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
+export const dynamic = 'force-dynamic';
 
-const ongs = [
-  {
-    name: 'Enkoji',
-    icon: '円',
-    subtitle: 'Templo Budista Zen',
-    location: 'Itapecerica da Serra, SP',
-    accentColor: '#4A5D23',
-    projects: [
-      {
-        title: 'Horta e Árvores',
-        subtitle: 'De Semente a Esperança',
-        description: 'Ajude a transformar vulnerabilidade em aprendizado e alimento.',
-        image: '/images/enkoji/hero_temple_v3.jpg',
-        href: 'ong/enkoji/horta-e-arvores',
-        tag: 'EDUCAÇÃO & NATUREZA',
-        budget: 'R$ 15.000',
-      },
-      {
-        title: 'Energia Limpa e Telhado',
-        subtitle: 'Proteja o Sagrado. Ilumine o Futuro.',
-        description: 'Telhado novo + infraestrutura para energia solar.',
-        image: '/images/enkoji/aerial_temple.jpg',
-        href: 'ong/enkoji/energialimpa-e-telhado',
-        tag: 'SUSTENTABILIDADE',
-        budget: 'R$ 38.000 – 45.000',
-      },
-    ],
-  },
-  {
-    name: 'VivaTerra',
-    icon: '🌱',
-    subtitle: 'Sustentabilidade Ambiental',
-    location: 'São Paulo, SP',
-    accentColor: '#4ADE80',
-    projects: [
-      {
-        title: 'Bio-Energy',
-        subtitle: 'Transforme Resíduos em Energia Limpa',
-        description: 'Convertendo 720 ton/ano de óleo usado em biocombustível sustentável.',
-        image: '/images/vivaterra/hero-bioenergy.jpg',
-        href: 'ong/vivaterra/bio-energy',
-        tag: 'ENERGIA LIMPA',
-        budget: '$537K',
-      },
-      {
-        title: 'Escala Eco-Limpeza',
-        subtitle: 'Transforme Resíduos em Limpeza Sustentável',
-        description: 'Escalando marcas de limpeza ecológica para 20M de pessoas na Grande SP.',
-        image: '/images/vivaterra/hero-bioenergy.jpg',
-        href: 'ong/vivaterra/eco-limpeza',
-        tag: 'LIMPEZA ECOLÓGICA',
-        budget: 'R$ 383K',
-      },
-      {
-        title: 'Tech-Rastreabilidade',
-        subtitle: 'Evidências em Blockchain',
-        description: 'App gamificado, marketplace, wallet tokenizada e rastreabilidade total.',
-        image: '/images/vivaterra/hero-bioenergy.jpg',
-        href: 'ong/vivaterra/tech-rastreabilidade',
-        tag: 'BLOCKCHAIN & ESG',
-        budget: '$184K',
-      },
-    ],
-  },
-  {
-    name: 'Civic Voices',
-    slug: 'civic-voices',
-    tagline: 'Ideas that transform societies',
-    logo: '🗣️',
-    color: '#C41E3A',
-    projects: [
-      {
-        title: 'Participação Cidadã Digital',
-        subtitle: 'Amplifique Vozes na Estratégia Fiscal',
-        description: 'Plataforma digital para influenciar o County Fiscal Strategy Paper 2026 de Kakamega.',
-        image: '/images/vivaterra/hero-bioenergy.jpg',
-        href: 'ong/civic-voices/participacao-cidada',
-        tag: 'DEMOCRACIA DIGITAL',
-        budget: '$125K',
-      },
-    ],
-  },
-];
+export default async function ProjectsHubPage({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params;
+  
+  // UUID do projeto Enkoji no Supabase
+  const projectId = 'ce326f59-e932-11ef-93a8-0242ac110002'; // Enkoji Project UUID
+  const sections = await getProjectSections(projectId, locale);
 
-export default function ProjectsHubPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const params = useParams();
-  const locale = params.locale || 'pt';
-
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(headerRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power2.out' });
-
-      sectionsRef.current.forEach((section, i) => {
-        if (section) {
-          gsap.fromTo(
-            section.querySelectorAll('.project-card'),
-            { y: 50, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.8, delay: 0.3 + i * 0.15, stagger: 0.15, ease: 'power2.out' }
-          );
-        }
-      });
-    }, containerRef);
-    return () => ctx.revert();
-  }, []);
+  const renderSection = (section: any) => {
+    switch (section.template_name) {
+      case 'HeroSection':
+        return <HeroSection key={section.id} {...section.content} />;
+      case 'IntermediateCTA':
+        return <IntermediateCTA key={section.id} {...section.content} />;
+      case 'ClosingCTASection':
+        return <ClosingCTASection key={section.id} {...section.content} />;
+      default:
+        return null;
+    }
+  };
 
   return (
-    <main ref={containerRef} className="min-h-screen bg-[#1F1F1F] flex flex-col pt-32">
-
-      {/* ONG Sections */}
+    <main className="min-h-screen bg-[#1F1F1F] flex flex-col pt-32">
       <div className="flex-1 px-6 pb-20 lg:pb-28 max-w-[1400px] mx-auto w-full space-y-16">
-        {ongs.map((ong, ongIndex) => (
-          <div key={ongIndex} ref={(el) => { sectionsRef.current[ongIndex] = el; }}>
-            {/* ONG Header */}
-            <div className="flex items-center gap-4 mb-8">
-              <div
-                className="w-12 h-12 rounded-full border flex items-center justify-center text-lg"
-                style={{ borderColor: `${ong.accentColor}50`, color: ong.accentColor }}
-              >
-                {ong.icon}
-              </div>
-              <div>
-                <h2 className="text-2xl font-serif text-white">{ong.name}</h2>
-                <p className="text-sm text-white/40">{ong.subtitle} · {ong.location}</p>
-              </div>
-              <div className="ml-auto hidden sm:block">
-                <span
-                  className="text-xs px-3 py-1 rounded-full border"
-                  style={{ borderColor: `${ong.accentColor}40`, color: ong.accentColor }}
-                >
-                  {ong.projects.length} {ong.projects.length === 1 ? 'projeto' : 'projetos'}
-                </span>
-              </div>
-            </div>
-
-            {/* Project Cards */}
-            <div className={`grid gap-6 lg:gap-8 ${ong.projects.length === 1 ? 'lg:grid-cols-1 max-w-[700px]' : 'lg:grid-cols-2'}`}>
-              {ong.projects.map((project, i) => (
-                <Link
-                  key={i}
-                  href={`/${locale}/${project.href}`}
-                  className="project-card group relative rounded-[2rem] overflow-hidden bg-[#2a2a2a] border border-white/5 hover:border-white/15 transition-all duration-500 hover:shadow-2xl flex flex-col"
-                  style={{ ['--accent' as string]: ong.accentColor }}
-                >
-                  {/* Image */}
-                  <div className="h-[35vh] lg:h-[40vh] relative overflow-hidden">
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1F1F1F] via-transparent to-transparent" />
-                    <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full" style={{ backgroundColor: ong.accentColor }}>
-                      <span className="text-white text-[10px] tracking-[0.2em] font-medium">{project.tag}</span>
-                    </div>
-                    <div className="absolute top-6 right-6 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                      <span className="text-white text-xs font-mono">{project.budget}</span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-8 lg:p-10 flex flex-col flex-grow">
-                    <h3 className="text-2xl lg:text-3xl font-serif text-white mb-2">{project.subtitle}</h3>
-                    <h4 className="text-sm font-medium tracking-wide uppercase mb-4" style={{ color: ong.accentColor }}>
-                      {project.title}
-                    </h4>
-                    <p className="text-white/50 leading-relaxed mb-8">{project.description}</p>
-                    <div className="mt-auto flex items-center gap-2 text-white/70 transition-colors" style={{ ['--hover-color' as string]: ong.accentColor }}>
-                      <span className="text-sm font-medium group-hover:text-[var(--accent)]">Conhecer projeto</span>
-                      <ArrowRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:text-[var(--accent)]" />
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
+        {sections.length > 0 ? (
+          sections.map(renderSection)
+        ) : (
+          <div className="min-h-screen flex items-center justify-center text-gray-400">
+            <p>Carregando conteúdo dinâmico do projeto...</p>
           </div>
-        ))}
+        )}
       </div>
-
     </main>
   );
 }
