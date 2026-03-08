@@ -9,6 +9,8 @@ import FAQCivic from '@/sections/civic-voices/FAQCivic';
 import FooterCivic from '@/sections/civic-voices/FooterCivic';
 import Navigation from '@/components/Navigation';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Civic Voices — Participação Cidadã Digital | Trustbond',
   description: 'Plataforma digital de participação cidadã para influenciar o County Fiscal Strategy Paper 2026 de Kakamega.',
