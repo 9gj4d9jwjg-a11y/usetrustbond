@@ -10,8 +10,8 @@ export const TRUSTBOND_PROJECTS = {
     title: 'Energia Limpa e Telhado',
   },
   VIVATERRA_BIO: {
-    id: 'PLACEHOLDER_VIVATERRA_BIO_ID',
-    url: 'https://www.trustbond.app/pt/sign-up?project_id=PLACEHOLDER_VIVATERRA_BIO_ID',
+    id: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
+    url: 'https://www.trustbond.app/pt/sign-up?project_id=a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
     title: 'VivaTerra — Bio-Energy',
   },
   HOME: 'https://www.trustbond.app',
